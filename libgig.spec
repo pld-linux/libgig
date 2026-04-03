@@ -4,16 +4,16 @@
 #
 Summary:	C++ library for loading, modifying and creating sample files
 Name:		libgig
-Version:	4.1.0
-Release:	1
+Version:	4.5.2
+Release:	2
 License:	LGPL + GPL v2
 Group:		Libraries
 Source0:	http://download.linuxsampler.org/packages/%{name}-%{version}.tar.bz2
-# Source0-md5:	a2ad3f933d13332b7a2ea68de20fa4b7
+# Source0-md5:	8348f7cdf3ac6db7009bc0b22ee48c6e
 URL:		https://www.linuxsampler.org/libgig/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libsndfile >= 1.0.2
+BuildRequires:	libsndfile-devel >= 1.0.2
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -89,8 +89,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_libdir}/libgig.so.8.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgig.so.8
+%attr(755,root,root) %{_libdir}/libgig.so.13.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgig.so.13
 %attr(755,root,root) %{_libdir}/libakai.so.0.*.*
 %attr(755,root,root) %ghost %{_libdir}/libakai.so.0
 
@@ -117,6 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/rifftree
 %attr(755,root,root) %{_bindir}/sf2dump
 %attr(755,root,root) %{_bindir}/sf2extract
+%attr(755,root,root) %{_bindir}/wav2gig
 %{_mandir}/man1/akaidump.1*
 %{_mandir}/man1/akaiextract.1*
 %{_mandir}/man1/dlsdump.1*
@@ -130,6 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/rifftree.1*
 %{_mandir}/man1/sf2dump.1*
 %{_mandir}/man1/sf2extract.1*
+%{_mandir}/man1/wav2gig.1*
 
 %if %{with static_libs}
 %files static
